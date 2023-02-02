@@ -1,0 +1,13 @@
+version: '3'
+services:
+  flask:
+    command:  "gunicorn -b 0.0.0.0:5000 app:app --timeout 60"
+    build: ./flask-app
+    environment:
+      OPENAI_API_KEY: INSERT_API_KEY_HERE
+    ports:
+      - 5000:5000
+    volumes:
+      - ./flask-app:/app
+    working_dir: /app
+    restart: on-failure
