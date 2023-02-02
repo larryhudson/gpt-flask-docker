@@ -27,13 +27,6 @@ def get_index_timestamp_filename():
 
 @app.route('/')
 def home():
-    # initial_urls = ["https://www.informationaccessgroup.com/our_services.html"]
-    # documents = SimpleWebPageReader(html_to_text=True).load_data(initial_urls)
-
-    # index = GPTSimpleVectorIndex(documents)
-    
-    # index.save_to_disk('index.json')
-
     return render_template('index.html')
 
 @app.route('/query')
